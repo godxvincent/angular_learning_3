@@ -145,6 +145,15 @@
                     <td> {{ nombreRaro | capitalizado:false }} </td>
                 </tr>
 
+                <tr>
+                    <td> {{ nombre }} </td>
+                    <td> contraseña:{{ activar }}
+                        <br>
+                        <button class="mr-1 btn btn-outline-primary" (click)="activar=!activar">Activar/Desactivar</button>
+                    </td>
+                    <td> {{nombre | contrasena:activar}} </td>
+                </tr>
+
             </tbody>
         </table>
 
@@ -160,6 +169,15 @@
                 <pre>
                     {{ heroe | json }}
                 </pre>
+            </div>
+        </div>
+
+        <h3 class="mt-4">DOM Seguro</h3>
+        <hr>
+        <div class="row mb-5">
+            <div class="col">
+                <iframe width="560" height="315" [src]="videoURL | domseguro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
             </div>
         </div>
     </div>
